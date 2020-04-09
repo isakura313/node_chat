@@ -1,4 +1,4 @@
-const socket = io.connect('https://chatisakura3131.herokuapp.com:8080')
+const socket = io.connect('https://chatisakura3131.herokuapp.com')
 
 let message = document.querySelector("#message")
 
