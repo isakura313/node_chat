@@ -18,7 +18,11 @@ app.get("/", (req,res)=>{
 
 
 
-server = app.listen(port)
+server = app.listen(port, ()=>{
+    console.log("server поднялся")
+    console.log('http://localhost:8080');
+})
+
 
 const io = require("socket.io")(server)
 
