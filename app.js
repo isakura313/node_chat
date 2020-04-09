@@ -1,17 +1,24 @@
 const express = require('express')
+const favicon = require('express-favicon')
+
+
+port = process.env.PORT || 8080;
+
 const app = express()
 
 app.set("view engine", "ejs")
 
 
 app.use(express.static("public"))
+app.use(favicon(__dirname+'/favicon.png'))
 
 app.get("/", (req,res)=>{
     res.render("index")
 })
 
 
-server = app.listen("3000", ()=> console.log(`server start on 3000 port`))
+
+server = app.listen(port)
 
 const io = require("socket.io")(server)
 
